@@ -1,0 +1,7 @@
+{
+  "code": "mods.mb.AngelosPizzeria.dialoguePool.AngeloGeneral",
+  "type": "Personality",
+  "dialogue": [
+    "mods.mb.AngelosPizzeria.dialogue.AngeloGeneral"
+  ]
+}

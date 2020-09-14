@@ -1,0 +1,6 @@
+language.code=en-GB
+language=English
+
+staxel.villager.Angelo.name=Angelo
+mods.mb.AngelosPizzeria.mail.AngeloArrival.subject=There goes the nieghbourhood
+mods.mb.AngelosPizzeria.mail.AngeloArrival.body=Caio!\n\nI wanted to extend my thanks to you, ^c:1486b0;$playername;^c:pop;, for erecting a suitable house for me in the village.\n\nCordali Saluti,\n^c:1486b0;Angelo^c:pop;

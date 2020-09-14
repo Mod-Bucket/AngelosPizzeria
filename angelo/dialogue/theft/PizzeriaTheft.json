@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "You hear about the thief that's in town? They're a real pizza work! #line:10000100",
+      "Spread the word to the rest of the island. #line:10000200",
+      "People knead to know to keep an eye out for suspicious characters. #line:10000300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -19,
+      "y": -14
+    }
+  }
+]

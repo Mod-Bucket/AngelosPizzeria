@@ -1,0 +1,7 @@
+{
+  "code": "mods.mb.AngelosPizzeria.dialoguePool.RosemaryLiked",
+  "type": "Unique",
+  "dialogue": [
+    "mods.mb.AngelosPizzeria.dialogue.AngeloLiked"
+  ]
+}

@@ -1,0 +1,207 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.BestFriends barnComplete true BestFriendQuest>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.Friends barnComplete true FriendQuest>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.Liked barnComplete true LikedQuest>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.Acquaintance barnComplete true AcquaintanceQuest>>",
+      "<<pickRandomFromDialoguePools>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 520,
+      "y": 11
+    }
+  },
+  {
+    "title": "House_Built",
+    "body": [
+      "<<writeDialogue on mods.mb.AngelosPizzeria.totem.AngeloHome.quest>>",
+      "Wonderful, ^c:1486b0;$playername;^c:pop;! The house looks great. #line:10015100",
+      "It's almost as good as if I paid someone to professionally construct it. #line:10015200",
+      "Here's a little something to say thank you for all the hardwork. #line:10015200",
+      "<<givePlayerPetals 4500>>",
+      "<<giveItemToPlayer tilePlacer staxel.tileObject.villagers.rewards.Cirahna.CirahnasMagicBook>>",
+      "Now if you will excuse me, I'm about to test out how well your plumbing skills are. #line:10015300",
+      "<<completeMainQuest mods.mb.AngelosPizzeria.totem.AngeloHome.quest>>",
+      "<<set $houseBuilt = 1>>",
+      "<<set $daySinceHouseBuilt to $day>>",
+      "<<set $daySinceHouseBuilt+=2>>",
+      "<<writeDialogue off True>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1990,
+      "y": 14
+    }
+  },
+  {
+    "title": "TavernBed",
+    "body": [
+      "I woke up last night with a sudden itch over my entire body. #line:10014100",
+      "It took all my will power to resist the urge to scratch and go back to sleep. #line:10014200",
+      "You don't think there are bed bugs here, do you? #line:10014300",
+      "Hopefully you finish my home soon so I can sleep in my own bed. #line:10014400",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1748,
+      "y": 696
+    }
+  },
+  {
+    "title": "Suitcase",
+    "body": [
+      "Ooooh... ^c:1486b0;$name;'s^c:pop; Still not done with the house constructions? #line:10013100",
+      "That's a shame. I was hoping I'd be be able to stop living out of my suitcase. #line:10013200",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1747,
+      "y": 470
+    }
+  },
+  {
+    "title": "SpareTime",
+    "body": [
+      "Hey there.... What a lovely surprise visit. #line:10012100",
+      "If you have spare time to visit me does that mean my house is done? #line:10012200",
+      "It's not done yet? #line:10012300",
+      "That's fine. I'll just continue living in the tavern while you leisurely build my home. #line:10012400",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1745,
+      "y": 244
+    }
+  },
+  {
+    "title": "House_NotBuilt",
+    "body": [
+      "<<pickRandomPath>>",
+      "<<TavernBed>>",
+      "<<Suitcase>>",
+      "<<SpareTime>>",
+      "<<flushRandomPath>>"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1743,
+      "y": 17
+    }
+  },
+  {
+    "title": "CheckForMailbox",
+    "body": [
+      "<<loadIfPlayerLearntRecipe staxel.crafting.recipes.Cauldron $learnt>>",
+      "<<if not $learnt>>",
+      "    <<giveItemToPlayerIfDoesntHave recipe staxel.crafting.recipes.Cauldron>>",
+      "<<endif>>",
+      "",
+      "<<loadTotemPlaced mods.mb.AngelosPizzeria.totem.AngeloHome $totemExists>>",
+      "<<if $totemExists is 0>>",
+      "<<branchPlayerHasItem tilePlacer mods.mb.AngelosPizzeria.totems.AngeloMailbox House_NotBuilt>>",
+      "You appear to have misplaced my ^c:d03e37;Mailbox^c:pop;. #line:10011100",
+      "<<giveItemToPlayerIfDoesntHave tilePlacer tilePlacer mods.mb.AngelosPizzeria.totems.AngeloMailbox>>",
+      "Make sure you don't lose this one as well.  #line:10011200",
+      "^c:1486b0;Maximilian's^c:pop; mailbox replacement fees are borderline extortion. #line:10011300",
+      "<<endif>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1480,
+      "y": 8
+    }
+  },
+  {
+    "title": "AcquaintanceQuest",
+    "body": [
+      "<<if $houseBuilt != 1>>",
+      "[[CheckHouseProgress]]",
+      "<<endif>>",
+      "<<if $daySinceHouseBuilt <= $day>>",
+      "    <<pickRandomFromDialoguePools>>",
+      "<<endif>>",
+      "<<pickRandomFromDialoguePools>>",
+      ""
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 925,
+      "y": 7
+    }
+  },
+  {
+    "title": "CheckHouseProgress",
+    "body": [
+      "<<branchValidStructureExists mods.mb.AngelosPizzeria.totem.AngeloHome House_Built>>",
+      "[[CheckForMailbox]]"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 1189,
+      "y": 7
+    }
+  },
+  {
+    "title": "LikedQuest",
+    "body": [
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 2,
+    "position": {
+      "x": 927,
+      "y": -234
+    }
+  },
+  {
+    "title": "FriendQuest",
+    "body": [
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 3,
+    "position": {
+      "x": 925,
+      "y": -463
+    }
+  },
+  {
+    "title": "BestFriendQuest",
+    "body": [
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 925,
+      "y": -697
+    }
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "code": "mods.mb.AngelosPizzeria.job.Angelo",
+  "startingTime": 380,
+  "endingTime": 1020,
+  "workOvernight": false,
+  "requiresWorkPlaceExisted" : true,
+  //"primaryDialogue": "mods.mb.AngelosPizzeria.dialogue.job.Angelo",
+  //"dialoguePools": ["mods.mb.AngelosPizzeria.dialoguePool.job.Angelo"],
+  //"workPlaceMissingPools": [],
+  "jobItems" : [
+    {
+      "code" : "mods.mb.AngelosPizzeria.jobitem.AngeloPizzaPeel"
+    }
+  ],
+  "workPlace": "mods.mb.AngelosPizzeria.totem.Pizzeria",
+  "workPlaceTools": [
+    "staxel.tileObject.shop.CashRegister",
+    "mods.mb.AngelosPizzeria.shop.PizzaShelf"
+  ],
+  "mainWorkplaceTool": "staxel.tileObject.shop.CashRegister",
+  "weightedScripts": [
+    {
+      "script": "staxel.script.StandAroundIdleJob",
+      "weight": 25.0
+    },
+    {
+      "script": "staxel.script.LookAroundIdleJob",
+      "weight": 2.5
+    },
+    {
+      "script": "staxel.script.ReadBookStandingJobScript",
+      "weight": 5.0
+    }
+  ]
+}

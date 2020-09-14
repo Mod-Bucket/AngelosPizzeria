@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "Ciao! You must be the free labourer ^c:1486b0;Maximilian^c:pop; was telling me about. #line:10000100",
+      "My name is ^c:1486b0;$name;^c:pop; by the way! #line:10000200",
+      "I decided to relocated here from my homeland, the Isle of Sorna. #line:10000300",
+      "Word of ^c:1486b0;Maximilian's^c:pop; superior mayoral skills have started to spread to the other islands. #line:10000400",
+      "Starting a new business here is as simple as buying land from the Mayor. #line:10000500",
+      "Then some chump... I mean, virtuous farmer will build you a workshop and home. #line:10000600",      
+      "Anyway. I'm getting side-tracked. #line:10000700",
+      "<<emote staxel.emote.ScratchHead>>",
+      "<<writeDialogue on mods.mb.AngelosPizzeria.totem.AngeloHome.quest>>",
+      "Your magnificent, awe-inspiring, breathtaking construction services have been generously volunteered. #line:10000800",
+	  "It's very stressful leaving home and moving to a brand new island. #line:10000900",
+	  "No matter how you slice it, you're awesome. #line:10001000",	  
+	  "Here is my mailbox and a list of items I would appreciate if you incorporated in the design. #line:10001100",	  
+      "<<giveItemToPlayerIfDoesntHave tilePlacer mods.mb.AngelosPizzeria.totems.AngeloMailbox>>",
+      "I'll be renting a room at the tavern until you are done. #line:10001200",
+      "Feel free to stop by any time. #line:10001300",
+      "<<writeDialogue off>>",
+	  "<<set $said_hi += 1>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 541,
+      "y": 258
+    }
+  }
+]

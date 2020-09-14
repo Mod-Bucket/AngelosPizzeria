@@ -1,0 +1,18 @@
+{
+  "code": "mods.mb.AngelosPizzeria.Personality.Angelo",
+  "canGiveQuests": true,
+  "canLeaveTown": true,
+  "canOverrideBehaviour": false,
+  "idleScript": "staxel.script.IdleNpcScript",
+  "dialoguePools": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloGeneral"],
+  "primaryDialogue": "mods.mb.AngelosPizzeria.dialogue.AngeloPrimary",
+  "theftDialoguePools": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloTheft"],
+  "suppressGeneralDialogue": true,
+  //"typicalRegards": [],
+  /*"seasonalDialogue": {
+  "Summer": "staxel.dialoguePool.CaithGirlSummer",
+  "Autumn": "staxel.dialoguePool.CaithGirlAutumn",
+  "Spring": "staxel.dialoguePool.CaithGirlSpring",
+  "Winter": "staxel.dialoguePool.CaithGirlWinter"
+  },*/
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<pickRandomPath>>",
+      "<<Rabbits>>",
+      "<<Cat>>",
+      "<<flushRandomPath>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 538,
+      "y": 261
+    }
+  },
+  {
+    "title": "Cat",
+    "body": [
+      "Hello, ^c:1486b0;$playername;^c:pop;. #line:10000100",
+      "Good job with saving that cat, by the way... #line:10000200",
+      "I...don't know if I really thanked you enough for it yet... #line:10000300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 515,
+      "y": 535
+    }
+  },
+  {
+    "title": "Rabbits",
+    "body": [
+      "Rabbits...rabbits are hard to handle... #line:10000400",
+      "I just...I haven't really been able to deal with them very well. #line:10000500",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 261,
+      "y": 484
+    }
+  }
+]

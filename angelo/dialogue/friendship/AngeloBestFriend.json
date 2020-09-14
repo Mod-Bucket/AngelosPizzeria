@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<pickRandomPath>>",
+      "<<lameJoke>>",
+      "<<Discount>>",
+      "<<flushRandomPath>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 538,
+      "y": 261
+    }
+  },
+  {
+    "title": "lameJoke",
+    "body": [
+      "^c:1486b0;$playername;^c:pop;! Are you here to see ^c:1486b0;NEWRABBITNAME^c:pop;? #line:10000100",
+      "I hope you come to see me sometimes too and not just the rabbit... #line:10000200",
+      "I...I'm just joking...of course... #line:10000300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 531,
+      "y": 517
+    }
+  },
+  {
+    "title": "Discount",
+    "body": [
+      "I really wish I could give you a discount... #line:10000400",
+      "But the ^c:1486b0;pet store^c:pop; isn't really doing as well as I'd like. #line:10000500",
+      "You may be my...best friend, but I don't want to go bankrupt over that... #line:10000600",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 803,
+      "y": 480
+    }
+  }
+]

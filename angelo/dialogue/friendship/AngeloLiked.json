@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<pickRandomPath>>",
+      "<<Store>>",
+      "<<Pets>>",
+      "<<flushRandomPath>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 538,
+      "y": 260
+    }
+  },
+  {
+    "title": "Store",
+    "body": [
+      "A...a ^c:1486b0;pet store^c:pop; really makes a village feel more...homey. #line:10000100",
+      "Animals just...make you feel more at ease. #line:10000200",
+      "More at home. #line:10000300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 523,
+      "y": 535
+    }
+  },
+  {
+    "title": "Pets",
+    "body": [
+      "I...I actually stopped keeping pets for a while... #line:10000400",
+      "It's...not always easy. Some parts especially... #line:10000500",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 792,
+      "y": 516
+    }
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "",
+      "<<if $giftCode == \"staxel.item.quest.FriendshipBracelet\">>",
+      "<<branchRoomieNotAvailable CantBestFriend>>",
+      "<<branchAlreadyHasRoomie CantBestFriend>>",
+      "[[BestFriend]]",
+      "<<endif>>",
+      "",
+      "[[Like]]"
+    ],
+    "tags": "",
+    "colorID": 1,
+    "position": {
+      "x": 591,
+      "y": 149
+    }
+  },
+  {
+    "title": "Like",
+    "body": [
+      "...is that for me? #line:10000100",
+      "[[It's for you!|GiveGood]]  #line:10000200",
+      "[[Nevermind|CancelGood]]  #line:10000300"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 984,
+      "y": 411
+    }
+  },
+  {
+    "title": "CancelGood",
+    "body": [
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 777,
+      "y": 691
+    }
+  },
+  {
+    "title": "GiveGood",
+    "body": [
+      "<<giftItem>>",
+      "<<if $giftValue > 3>>",
+      "Thank you so much! #line:10000400",
+      "...how did you know? Were you...spying on me? #line:10000500",
+      "<<else>>",
+      "<<if $giftValue > -1 >>",
+      "Thank you...it's very nice. #line:10000600",
+      "<<else>>",
+      "Oh... #line:10000700",
+      "This...is... #line:10000800",
+      "Really...lovely... #line:10000900",
+      "Yeah... #line:10001000",
+      "",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>",
+      "<<runAway>>",
+      "",
+      "<<endif>>",
+      "<<endif>>",
+      "",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1208,
+      "y": 699
+    }
+  },
+  {
+    "title": "CantBestFriend",
+    "body": [
+      "I...I'm not sure I'm ready for that... #line:10001100",
+      "Not yet... #line:10001200"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 975,
+      "y": 94
+    }
+  },
+  {
+    "title": "BestFriend",
+    "body": [
+      "Do...do you want me to be your roomie...? #line:10001300",
+      "[[Definitely!|RoomieYes]] #line:10001400",
+      "[[Not right now.|RoomieNo]] #line:10001500"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1284,
+      "y": 92
+    }
+  },
+  {
+    "title": "RoomieYes",
+    "body": [
+      "Well... I... #line:10001600",
+      "I'm not sure what to say... #line:10001700",
+      "I'd be happy to share your home! #line:10001800",
+      "I'd get to see your pet more often that way... #line:10001900",
+      "I'll... I'll just gather my things. There isn't much...I promise! #line:10002000",
+      "<<giftItem>>",
+      "<<setPlayerRoomie>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1575,
+      "y": 186
+    }
+  },
+  {
+    "title": "RoomieNo",
+    "body": [
+      "Oh... #line:10002100",
+      "I guess I'm not surprised. #line:10002200",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1559,
+      "y": -99
+    }
+  }
+]

@@ -1,0 +1,24 @@
+  {
+    "title": "House_Built",
+    "body": [
+      "<<writeDialogue on mods.AngelosPizzeria.totem.AngeloHome.quest>>",
+      "Wonderful, ^c:1486b0;$playername;^c:pop;! The house looks great. #line:10010300",
+      "It's almost as good as if I paid someone to professionally construct it. #line:10010400",
+      "Here's a little something to say thank you for all the hardwork. #line:10010500",
+      "<<givePlayerPetals 4500>>",
+      //"<<giveItemToPlayer tilePlacer staxel.tileObject.villagers.rewards.Cirahna.CirahnasMagicBook>>",
+      "Now if you will excuse me, I'm about to test out how well your plumbing skills are. #line:10010600",
+      "<<completeMainQuest mods.AngelosPizzeria.totem.AngeloHome.quest>>",
+      "<<set $house_Built = 1>>",
+      "<<typewriterMode off True True>>",
+      "<<writeDialogue off True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1021,
+      "y": 1150
+    }
+  },
+  

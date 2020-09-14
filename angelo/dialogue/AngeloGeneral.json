@@ -1,0 +1,218 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<requestGoToQuestIfAvailable>>",
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<pickRandomPath>>",
+      "<<Hi>>",
+      "<<Pet>>",
+      "<<Animals>>",
+      "<<Face>>",
+      "<<Tool>>",
+      "<<FeedPet>>",
+      "<<Stare>>",
+      "<<Visit>>",
+      "<<Cats>>",
+      "<<Forest>>",
+      "<<Crate>>",
+      "<<flushRandomPath>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 706,
+      "y": 453
+    }
+  },
+  {
+    "title": "Hi",
+    "body": [
+      "Um... hi. #line:10000100",
+      "Did you need something from me? #line:10000200",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 319,
+      "y": 816
+    }
+  },
+  {
+    "title": "Pet",
+    "body": [
+      "So... uh... #line:10000300",
+      "Did you bring your pet with you today? #line:10000400",
+      "I wanted to say hello... #line:10000500",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 578,
+      "y": 813
+    }
+  },
+  {
+    "title": "Animals",
+    "body": [
+      "Ah... ^c:1486b0;$playername;^c:pop;. #line:10000600",
+      "Don't forget to take good care of your animals. #line:10000700",
+      "It would be bad if something happened to them... #line:10000800",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 822,
+      "y": 812
+    }
+  },
+  {
+    "title": "Face",
+    "body": [
+      "...is there something on my face? #line:10000900",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1069,
+      "y": 813
+    }
+  },
+  {
+    "title": "Tool",
+    "body": [
+      "Hey, ah... you know, you can charge lots of tools to make them work better. #line:10001000",
+      "Like ^c:d03e37;hammers^c:pop; or ^c:d03e37;shovels^c:pop; will break larger areas. #line:10001100",
+      "^c:d03e37;Hoes^c:pop; can plough a whole field in one go. #line:10001200",
+      "Things like that. #line:10001300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 320,
+      "y": 1067
+    }
+  },
+  {
+    "title": "FeedPet",
+    "body": [
+      "Y... you're feeding your pet regularly right? #line:10001600",
+      "If you don't... it won't be very happy. #line:10001700",
+      "That would be a bit sad don't you think? #line:10001800",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 587,
+      "y": 1068
+    }
+  },
+  {
+    "title": "Stare",
+    "body": [
+      "Um... hey... #line:10001900",
+      "Could you... could you not stare at me quite that much? #line:10002000",
+      "It's making me feel a bit nervous... #line:10002100",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 829,
+      "y": 1066
+    }
+  },
+  {
+    "title": "Visit",
+    "body": [
+      "Can... can I visit your farm every now and again? #line:10002200",
+      "I'd like to play with some of the animals. #line:10002300",
+      "Oh... only if that's okay... #line:10002400",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1082,
+      "y": 1067
+    }
+  },
+  {
+    "title": "Cats",
+    "body": [
+      "I've heard of places that have large numbers of stray cats... #line:10002500",
+      "Wouldn't it be nice if was like that around here? #line:10002600",
+      "I feel... more comfortable around cats I think... #line:10002700",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 322,
+      "y": 1302
+    }
+  },
+  {
+    "title": "Forest",
+    "body": [
+      "Hey... ^c:1486b0;$playername;^c:pop;... um... #line:10002800",
+      "Have you spent much time in the woodlands around here? #line:10002900",
+      "I really... really love the peace and quiet they offer. #line:10003000",
+      "Sometimes you'll see wildlife too... #line:10003100",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 582,
+      "y": 1301
+    }
+  },
+  {
+    "title": "Crate",
+    "body": [
+      "If you want to move animals around... #line:10003200",
+      "You can make ^c:d03e37;capture crates^c:pop; to pick them up. #line:10003300",
+      "There might be a ^c:d03e37;blueprint^c:pop; for them in the building store... #line:10003400",
+      "It depends on what they're stocking though... #line:10003500",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 834,
+      "y": 1303
+    }
+  },
+  {
+    "title": "Dead Node",
+    "body": [
+      "Oh... it's not just tools either. #line:10001400",
+      "Some cooking and crafting stations work the same way. #line:10001500"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 88,
+      "y": 1067
+    }
+  }
+]

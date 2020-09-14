@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<pickRandomPath>>",
+      "<<Feed>>",
+      "<<Cats>>",
+      "<<Quilt>>",
+      "<<flushRandomPath>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 538,
+      "y": 261
+    }
+  },
+  {
+    "title": "Cats",
+    "body": [
+      "Hey, ^c:1486b0;$playername;^c:pop;...? #line:10000100",
+      "Can we...get a few more cats? #line:10000200",
+      "I...I'd try to take care of them as much as I could... #line:10000300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 542,
+      "y": 521
+    }
+  },
+  {
+    "title": "Feed",
+    "body": [
+      "Did you feed the rabbits or shall I? #line:10000400",
+      "They're always so hungry it gets hard to tell if they've already been fed... #line:10000500",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 212,
+      "y": 362
+    }
+  },
+  {
+    "title": "Quilt",
+    "body": [
+      "I'm sorry, ^c:1486b0;$playername;^c:pop;... #line:10000600",
+      "I think ^c:1486b0;NEWRABBITNAME^c:pop; and ^c:1486b0;Hazel^c:pop; were munching on your quilt... #line:10000700",
+      "I tried to stop them but...it was already too late. #line:10000800",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 842,
+      "y": 344
+    }
+  }
+]

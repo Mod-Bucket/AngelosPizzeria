@@ -1,0 +1,30 @@
+{
+  "categories": [
+    "tool",
+    "peel",
+    "cooking"
+  ],
+  "code": "mods.mb.AngelosPizzeria.jobitem.AngeloPizzaPeel",
+  "icon": "mods/AngelosPizzeria/angelo/accessories/AngeloPizzaPeel.qb",
+  "iconScale": 0.5,
+  "inHand": "mods/AngelosPizzeria/angelo/accessories/AngeloPizzaPeel.qb",
+  "inHandOffset": {
+    "x": 0.0,
+    "y": -1.4,
+    "z": 0.0
+  },
+  "inHandRotation": {
+    "x": 0.3,
+    "y": 1.3,
+    "z": 1.74
+  },
+  "kind": "staxel.item.CraftItem",
+  "searchable": false,
+  "usageOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "useBoxCollider": true,
+  "canBeGifted": true
+}

@@ -1,0 +1,20 @@
+{
+  "__inherits": "staxel/mail/ItemMail.config",
+  "code": "mods.mb.AngelosPizzeria.mail.AngeloArrival",
+  "sender": "staxel.villager.Angelo.name",
+  "subject": "mods.mb.AngelosPizzeria.mail.AngeloArrival.subject",
+  "body": "mods.mb.AngelosPizzeria.mail.AngeloArrival.body",
+  "itemMail": {
+    "claimedIcon": "staxel/ui/image/Mail/LetterIconOpen.png",
+    "items": [
+      {
+        "code": "staxel.item.currency.SilverPetalCoin",
+        "quantity": 1
+      },
+      {
+        "code": "mods.mb.AngelosPizzeria.tool.PizzaPeel",
+        "quantity": 1
+      },	  
+    ]
+  }
+}

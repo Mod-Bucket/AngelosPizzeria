@@ -1,0 +1,741 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "",
+      "<<requestGoToQuestIfAvailable>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.BestFriends barnComplete true bestFriendQuest>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.Friends barnComplete true FriendQuest>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.Liked barnComplete true LikedQuest>>",
+      "<<branchIfFriendshipAndGlobal staxel.reputationLevel.Acquaintance barnComplete true AcquaintanceQuest>>",
+      "<<pickRandomFromDialoguePools>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 704,
+      "y": 452
+    }
+  },
+  {
+    "title": "AcquaintanceQuest",
+    "body": [
+      "<<if $AQuest_Started is 0>>",
+      "<<dontShowQuestRepNotification>>",
+      "[[startAQuest]]",
+      "<<endif>>",
+      "",
+      "<<if $AQuest_Complete is 0>>",
+      "<<dontShowQuestRepNotification>>",
+      "<<branchValidStructureExists staxel.totem.workplace.PetStore PetStoreBuilt>>",
+      "[[NotBuilt]]",
+      "<<endif>>",
+      "",
+      "<<requestGoToQuestIfAvailable>>",
+      "<<pickRandomFromDialoguePools>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1339,
+      "y": 404
+    }
+  },
+  {
+    "title": "GoodIdea",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Acquaintance>>",
+      "R...really? You think so...?  #line:10000100",
+      "<<emote staxel.emote.Yes>>",
+      "Do you...do you think you'd be interested in helping? I'm...not much of a builder...  #line:10000200",
+      "[[Of course!|AQuestStart]]  #line:10000300",
+      "[[Maybe some other time.|BuildRefuse]]  #line:10000400",
+      "<<writeDialogue off True>>"
+    ],
+    "tags": "",
+    "colorID": 6,
+    "position": {
+      "x": 1689,
+      "y": 406
+    }
+  },
+  {
+    "title": "NoMarket",
+    "body": [
+      "...oh...  #line:10000500",
+      "Well...maybe I'll put a bit more thought into it...  #line:10000600",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1006,
+      "y": 110
+    }
+  },
+  {
+    "title": "AQuestStart",
+    "body": [
+      "<<set $AQuest_Started to 1>>",
+      "<<set $onQuest to 1>>",
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Acquaintance>>",
+      "Thank you ^c:1486b0;$playername;^c:pop;! I...I knew I could count on you!  #line:10000700",
+      "<<giveItemToPlayerIfDoesntHave tilePlacer staxel.tileObject.totems.PetStoreSign>>",
+      "<<giveItemToPlayerIfDoesntHave recipe staxel.crafting.recipes.PetStoreShelf>>",
+      "<<giveItemToPlayerIfDoesntHave recipe staxel.crafting.recipes.PetPlayPen>>",
+      "<<unlockItemInShippingCatalogue tilePlacer staxel.tileObject.tavern.TavernStool>>",
+      "<<unlockItemInShippingCatalogue tilePlacer staxel.tileObject.shop.RainbowPlaypen>>",
+      "This...this should be all you need to get started...  #line:10000800",
+      "I...I know it isn't much, but I can give you some funds too...  #line:10000900",
+      "<<givePlayerPetals 1000>>",
+      "<<writeDialogue off True>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 2035,
+      "y": 403
+    }
+  },
+  {
+    "title": "BuildRefuse",
+    "body": [
+      "Oh... Well...  #line:10001000",
+      "In that case, I guess I'll have to put that on hold...  #line:10001100",
+      "...I'll be here if you change your mind...  #line:10001200",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1218,
+      "y": 112
+    }
+  },
+  {
+    "title": "NotBuilt",
+    "body": [
+      "<<unlockItemInShippingCatalogue tilePlacer staxel.tileObject.tavern.TavernStool>>",
+      "<<unlockItemInShippingCatalogue tilePlacer staxel.tileObject.shop.RainbowPlaypen>>",
+      "How is the ^c:1486b0;pet store^c:pop; coming along?   #line:10001300",
+      "I...I hope when it's done it'll make all the pets happier...  #line:10001400",
+      "We can save the abandoned animals too...!  #line:10001500",
+      "",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 6,
+    "position": {
+      "x": 1644,
+      "y": 860
+    }
+  },
+  {
+    "title": "LikedQuest",
+    "body": [
+      "<<if $LQuest_Complete is 1>>",
+      "    <<removeAllOfPlayerItem staxel.item.quest.StrayCat>>",
+      "    <<set $PVcatState to 4>>",
+      "    <<requestGoToQuestIfAvailable>>",
+      "    <<pickRandomFromDialoguePools>>",
+      "<<endif>>",
+      "",
+      "<<dontShowQuestRepNotification>>",
+      "<<branchPlayerHasItem staxel.item.quest.StrayCat hasCat>>",
+      "",
+      "<<if $PVcatState is null or $PVcatState is 0>>",
+      "    <<writeDialogue on staxel.mainQuest.Rosemary.Liked>>",
+      "    ^c:1486b0;$playername;^c:pop;! You...you have to help...!  #line:10001600",
+      "    There's a...a ^c:1486b0;stray cat^c:pop; I've seen around the village a bit...   #line:10001700",
+      "    It's not looking too well...  #line:10001800",
+      "    We...we need to find it and rescue it! What if someone accidentally sweeps it...?   #line:10001900",
+      "    Could you see if you can find it?   #line:10002000",
+      "    <<set $LQuest_Started to 1>>",
+      "    <<set $onQuest to 1>>",
+      "    <<setGlobal spawnStrayCat true>>",
+      "    <<branchTrySpawnSpecialFail staxel.village.character.StrayCat CatSpawnFail>>",
+      "    <<setGlobal spawnStrayCat False>>",
+      "    <<set $PVcatState to 1>>",
+      "    <<writeDialogue off True>>",
+      "    <<typewriterMode off True True>>",
+      "    <<releasePlayerFromConversation>>",
+      "<<endif>>",
+      "",
+      "<<branchNoVillagerWithCode staxel.village.character.StrayCat CatCheck>>",
+      "",
+      "<<if $PVcatState is 1>>",
+      "    [[CatNotSpokenTo]]",
+      "<<endif>>",
+      "",
+      "<<if $PVcatState is 2>>",
+      "    [[CatSpokenTo]]",
+      "<<endif>>",
+      "",
+      "<<if $PVcatState is 3>>",
+      "    [[catRepeat]]",
+      "<<endif>>",
+      "",
+      "<<requestGoToQuestIfAvailable>>",
+      "<<pickRandomFromDialoguePools>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -745,
+      "y": 424
+    }
+  },
+  {
+    "title": "CatNotSpokenTo",
+    "body": [
+      "Did...did you find it yet?  #line:10002100",
+      "We shouldn't waste any time...   #line:10002200",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -732,
+      "y": 774
+    }
+  },
+  {
+    "title": "CatSpokenTo",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Liked>>",
+      "You...you found it?    #line:10002300",
+      "But you say it...ran away?    #line:10002400",
+      "<<emote staxel.emote.Yes>>",
+      "What if...you try to befriend it? Maybe give it a gift...?    #line:10002500",
+      "<<writeDialogue off True>>",
+      "",
+      "<<set $PVcatState to 3>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>",
+      ""
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -376,
+      "y": 770
+    }
+  },
+  {
+    "title": "catRepeat",
+    "body": [
+      "Did you befriend it yet...?  #line:10002600",
+      "I think...it might like what usual cats do...  #line:10002700",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -252,
+      "y": 434
+    }
+  },
+  {
+    "title": "hasCat",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Liked>>",
+      "You...you managed to get it?  #line:10002800",
+      "That's a relief...  #line:10002900",
+      "I really need to take a proper look at some of those injuries...  #line:10003000",
+      "<<removeAllOfPlayerItem staxel.item.quest.StrayCat>>",
+      "<<set $PVcatState to 4>>",
+      "<<giveItemToPlayer clothing staxel.accessories.villagers.Rosemary.BunnyHat>>",
+      "<<givePlayerPetals 3500>>",
+      "I...I really appreciate the help, ^c:1486b0;$playername;^c:pop;.  #line:10003100",
+      "There aren't many like you around...  #line:10003200",
+      "If...if there's anything I can do...?  #line:10003300",
+      "[[I'd love a rabbit!|loveRabbit]]  #line:10003400",
+      "",
+      ""
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -770,
+      "y": 100
+    }
+  },
+  {
+    "title": "loveRabbit",
+    "body": [
+      "Rabbits? I...I'll have to think about it...  #line:10003500",
+      "Give me some time...  #line:10003600",
+      "",
+      "<<set $LQuest_Complete to 1>>",
+      "<<set $onQuest to 0>>",
+      "<<writeDialogue off True>>",
+      "<<setGlobal sellPets true>>",
+      "<<completeMainQuest staxel.mainQuest.Rosemary.Liked>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -1126,
+      "y": 183
+    }
+  },
+  {
+    "title": "PetStoreBuilt",
+    "body": [
+      "<<set $AQuest_Complete to 1>>",
+      "^c:1486b0;$playername;^c:pop;... I saw the ^c:1486b0;pet store^c:pop;...   #line:10003700",
+      "It...it's perfect!   #line:10003800",
+      "<<giveItemToPlayer tilePlacer staxel.tileObject.villager.BearTable>>",
+      "<<givePlayerPetals 2500>>",
+      "I know it's not really enough...but this is the only way I can compensate you right now...   #line:10003900",
+      "I hope you stop by the store soon...   #line:10004000",
+      "<<completeMainQuest staxel.mainQuest.Rosemary.Acquaintance>>",
+      "<<set $onQuest to 0>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1995,
+      "y": 827
+    }
+  },
+  {
+    "title": "startAQuest",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Acquaintance>>",
+      "",
+      "Oh, hi ^c:1486b0;$playername;^c:pop;...  #line:10004100",
+      "So... I...I've been thinking...  #line:10004200",
+      "You have a pet, right? Some of the other residents have in the past too...  #line:10004300",
+      "I... I've seen travelling merchants with pets too sometimes.  #line:10004400",
+      "So I was thinking... What if I opened a...^c:1486b0;pet store^c:pop;?  #line:10004500",
+      "<<writeDialogue off True>>",
+      "[[That sounds like a great idea!|GoodIdea]]  #line:10004600",
+      "[[Not sure there's a market, really.|NoMarket]]  #line:10004700"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1346,
+      "y": 698
+    }
+  },
+  {
+    "title": "FriendQuest",
+    "body": [
+      "<<removeAllOfPlayerItem staxel.item.quest.StrayCat>>",
+      "<<set $PVcatState to 4>>",
+      "<<if $FriendQuest_Complete is 1>>",
+      "<<requestGoToQuestIfAvailable>>",
+      "<<pickRandomFromDialoguePools>>",
+      "<<endif>>",
+      "<<dontShowQuestRepNotification>>",
+      "",
+      "<<set $onQuest to 1>>",
+      "<<if $PVRosemaryQuestLeifValid is 2>>",
+      "[[talkedToLief]]",
+      "",
+      "<<else>>",
+      "",
+      "<<if $friendQuestIntroGiven is 1>>",
+      "<<if $day > $wait_for>>",
+      "[[dayPassed]]",
+      "<<else>>",
+      "[[dotdotdot]]",
+      "<<endif>>",
+      "<<endif>>",
+      "",
+      "<<if $friendQuestIntroGiven is 0>>",
+      "<<set $friendQuestIntroGiven to 1>>",
+      "",
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Friend>>",
+      "Ah, ^c:1486b0;$playername;^c:pop;... #line:10004800",
+      "I...I didn't see you walk up... #line:10004900",
+      "I've been...I've been thinking a lot about rabbits recently. #line:10005000",
+      "But I'm not sure I want to talk about it right now... #line:10005100",
+      "Maybe if you come back tomorrow...? #line:10005200",
+      "",
+      "<<writeDialogue off True>>",
+      "<<set $wait_for to $day>>",
+      "<<endif>>",
+      "<<endif>>",
+      "",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 454,
+      "y": 906
+    }
+  },
+  {
+    "title": "dotdotdot",
+    "body": [
+      "... #line:10005300",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 834,
+      "y": 922
+    }
+  },
+  {
+    "title": "dayPassed",
+    "body": [
+      "<<if $PVfriendQuestStage2 is 2>>",
+      "[[dayPassedStage3]]",
+      "<<else>>",
+      "<<if $PVfriendQuestStage2 is 1>>",
+      "[[dayPassedStage2]]",
+      "<<else>>",
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Friend>>",
+      "",
+      "You know, ^c:1486b0;$playername;^c:pop;... #line:10005400",
+      "I had a rabbit once. A little brown ball of fluff... #line:10005500",
+      "But... #line:10005600",
+      "Two days after we brought it home, it stopped moving. #line:10005700",
+      "Just like that. No warning. Nothing. #line:10005800",
+      "It was...too much for my younger self... #line:10005900",
+      "I'm...I'm not sure I want to risk exposing anyone else to something like that... #line:10006000",
+      "<<writeDialogue off True>>",
+      "",
+      "<<set $PVfriendQuestStage2 to 1>>",
+      "<<set $wait_for to $day>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>",
+      "",
+      "<<endif>>",
+      "<<endif>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 445,
+      "y": 1201
+    }
+  },
+  {
+    "title": "dayPassedStage2",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Friend>>",
+      "",
+      "I'm sorry, ^c:1486b0;$playername;^c:pop;... #line:10006100",
+      "I...think it's for the best... #line:10006200",
+      "That way, no one needs to suffer... #line:10006300",
+      "<<writeDialogue off True>>",
+      "",
+      "<<defer sendMail staxel.mail.quest.FarmFanEavesdrop true>>",
+      "",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 820,
+      "y": 1186
+    }
+  },
+  {
+    "title": "talkedToLief",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Friend>>",
+      "Hmm? You...you heard something about ^c:1486b0;RABBITNAME^c:pop;...? #line:10006400",
+      "...it was already sick? #line:10006500",
+      "Are...are you sure about that? #line:10006600",
+      "I...I think I need to look into this a bit. #line:10006700",
+      "Can you give me some time perhaps? #line:10006800",
+      "<<writeDialogue off True>>",
+      "<<defer spawnRosemaryRabbit Poopsy normal>>",
+      "<<set $wait_for to $day>>",
+      "<<set $PVRosemaryQuestLeifValid to 3>>",
+      "<<set $PVfriendQuestStage2 to 2>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1176,
+      "y": 1214
+    }
+  },
+  {
+    "title": "dayPassedStage3",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.Friend>>",
+      "^c:1486b0;$playername;^c:pop;! I really hoped I'd run into you... #line:10006900",
+      "I thought about things a lot. More than I expected to... #line:10007000",
+      "And... I decided to try again. #line:10007100",
+      "I...I don't know how to thank you. #line:10007200",
+      "I'd never have found these things out on my own... #line:10007300",
+      "<<emote staxel.emote.No True>>",
+      "It...it feels good to finally have proper closure. I didn't even know I needed it... #line:10007400",
+      "I know this is nothing—not nearly enough to thank you... #line:10007500",
+      "<<giveItemToPlayer tilePlacer staxel.tileObject.villagers.rewards.Rosemary.RosemarysMusicBox>>",
+      "<<givePlayerPetals 4500>>",
+      "...but I hope it at least expresses some of my thanks... #line:10007600",
+      "Come play with ^c:1486b0;NEWRABBITNAME^c:pop; sometimes...okay? #line:10007700",
+      "<<set $FriendQuest_Complete to 1>>",
+      "<<completeMainQuest staxel.mainQuest.Rosemary.Friend>>",
+      "<<set $onQuest to 0>>",
+      "<<writeDialogue off True>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 839,
+      "y": 1468
+    }
+  },
+  {
+    "title": "bestFriendQuest",
+    "body": [
+      "<<removeAllOfPlayerItem staxel.item.quest.StrayCat>>",
+      "<<set $PVcatState to 4>>",
+      "<<if $BFQuest_Complete is 1>>",
+      "    <<removePlayerItem staxel.item.quest.Hazel>>",
+      "    <<requestGoToQuestIfAvailable>>",
+      "    <<pickRandomFromDialoguePools>>",
+      "<<endif>>",
+      "<<dontShowQuestRepNotification>>",
+      "<<branchPlayerHasItem staxel.item.quest.Hazel hasBunny>>",
+      "",
+      "<<if $BFQuestBunnySpawned is 0>>",
+      "    <<setGlobal spawnForestBunny true>>",
+      "    <<branchTrySpawnSpecialFail staxel.village.character.ForestBunny BunnySpawnFail>>",
+      "    <<setGlobal spawnForestBunny False>>",
+      "    <<set $BFQuestBunnySpawned to 1>>",
+      "<<endif>>",
+      "",
+      "<<if $BFQuestLastStage is 1>>",
+      "    [[lastStage]]",
+      "<<else>>",
+      "    <<if $PVRosemaryBFQuest_Started is null or $PVRosemaryBFQuest_Started is 0>>",
+      "        <<writeDialogue on staxel.mainQuest.Rosemary.BestFriend>>",
+      "        ^c:1486b0;$playername;^c:pop;! It...it's happened again... #line:10007800",
+      "        I knew this would happen... #line:10007900",
+      "        ^c:1486b0;NEWRABBITNAME^c:pop; is sick... #line:10008000",
+      "        Did I...did I do something wrong? #line:10008100",
+      "        He just doesn't seem to want to eat or anything... #line:10008200",
+      "        Is there...anything you can do? Do you think ^c:1486b0;Leif^c:pop; might know...? #line:10008300",
+      "        Could you ask him for me? I...I don't want to leave right now... #line:10008400",
+      "        <<set $PVRosemaryBFQuest_Started to 1>>",
+      "        <<set $onQuest to 1>>",
+      "        <<writeDialogue off True>>",
+      "        <<typewriterMode off True True>>",
+      "        <<releasePlayerFromConversation>>",
+      "    <<else>>",
+      "        <<branchNoVillagerWithCode staxel.village.character.ForestBunny BunnyCheck>>",
+      "        [[explain]]",
+      "    <<endif>>",
+      "<<endif>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 615,
+      "y": -417
+    }
+  },
+  {
+    "title": "explain",
+    "body": [
+      "<<branchPlayerHasItem staxel.item.quest.UnidentifiableMedicine badMed>>",
+      "You...want me to explain what's wrong? #line:10008500",
+      "He's been very withdrawn... He always hides away in corners... #line:10008600",
+      "He doesn't follow me around the same way any more... #line:10008700",
+      "He hasn't touched his food in days... #line:10008800",
+      "I...I don't know what to do... #line:10008900",
+      "If it were any other animal I might know how to treat him... #line:10009000",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 162,
+      "y": -427
+    }
+  },
+  {
+    "title": "badMed",
+    "body": [
+      "<<removeAllOfPlayerItem staxel.item.quest.UnidentifiableMedicine>>",
+      "I...I might not know much about caring for rabbits... #line:10009100",
+      "But I can tell that's not the right solution... #line:10009200",
+      "It doesn't match the symptoms... #line:10009300",
+      "He's been very withdrawn... He always hides away in corners... #line:10009400",
+      "He doesn't follow me around the same way any more... #line:10009500",
+      "He hasn't touched his food in days... #line:10009600",
+      "I...I don't know what to do... #line:10009700",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 129,
+      "y": -736
+    }
+  },
+  {
+    "title": "hasBunny",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Rosemary.BestFriend>>",
+      "Did...did you go out and find another rabbit for me? #line:10009800",
+      "But... #line:10009900",
+      "^c:1486b0;Leif^c:pop; said it's loneliness? That another rabbit would help? #line:10010000",
+      "...I suppose it's worth trying at least... #line:10010100",
+      "Maybe if we wait a few days he'll start to improve? #line:10010200",
+      "<<removeAllOfPlayerItem staxel.item.quest.Hazel>>",
+      "<<spawnRosemaryRabbit Hazel forest>>",
+      "<<writeDialogue off True>>",
+      "<<set $BFQuestLastStage to 1>>",
+      "<<set $wait_for to $day + 1>>",
+      "<<set $PVRosemaryBFQuest_Started to 3>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 610,
+      "y": -769
+    }
+  },
+  {
+    "title": "lastStage",
+    "body": [
+      "<<if $day > $wait_for>>",
+      "<<writeDialogue on staxel.mainQuest.Rosemary.BestFriend>>",
+      "^c:1486b0;$playername;!^c:pop; He got better! #line:10010300",
+      "It really was loneliness! The two of them have been playing together all day! #line:10010400",
+      "His appetite is back to normal and he's not as withdrawn any more! #line:10010500",
+      "I...I can't think of a way to thank you properly... #line:10010600",
+      "This is more than anyone has done for me before... #line:10010700",
+      "You...you really went above and beyond. #line:10010800",
+      "<<givePlayerPetals 5500>>",
+      "<<giveItemToPlayer tilePlacer staxel.tileObject.bobbleheads.RosemaryBobbleHead>>",
+      "Thank you for doing so much for me... #line:10010900",
+      "It's just a pity we live so far apart... #line:10011000",
+      "<<setRoomieAvailable>>",
+      "<<set $onQuest to 0>>",
+      "<<set $BFQuest_Complete to 1>>",
+      "<<writeDialogue off True>>",
+      "<<completeMainQuest staxel.mainQuest.Rosemary.BestFriend>>",
+      "<<setGlobal sellBunny true>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>",
+      "",
+      "<<else>>",
+      "[[tooEarly]]",
+      "<<endif>>",
+      "",
+      ""
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 961,
+      "y": -798
+    }
+  },
+  {
+    "title": "tooEarly",
+    "body": [
+      "I...think it might be too early to tell... #line:10011100",
+      "We should give them a little bit more time... #line:10011200",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1091,
+      "y": -438
+    }
+  },
+  {
+    "title": "BunnySpawnFail",
+    "body": [
+      "<<setGlobal spawnForestBunny False>>",
+      "<<requestGoToQuestIfAvailable>>",
+      "<<pickRandomFromDialoguePools>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 603,
+      "y": -1021
+    }
+  },
+  {
+    "title": "BunnyCheck",
+    "body": [
+      "<<if $PVRosemaryBFQuest_Started is 3>> //Somehow didn't have bunny",
+      "    <<set $PVRosemaryBFQuest_Started to 2>>",
+      "<<endif>>",
+      "<<setGlobal spawnForestBunny true>>",
+      "<<branchTrySpawnSpecialFail staxel.village.character.ForestBunny BunnySpawnFail>>",
+      "<<setGlobal spawnForestBunny False>>",
+      "<<set $BFQuestBunnySpawned to 1>>",
+      "[[explain]]"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 396,
+      "y": -194
+    }
+  },
+  {
+    "title": "CatCheck",
+    "body": [
+      "<<setGlobal spawnStrayCat true>>",
+      "<<branchTrySpawnSpecialFail staxel.village.character.StrayCat CatSpawnFail>>",
+      "<<setGlobal spawnStrayCat False>>",
+      "[[CatNotSpokenTo]]"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -1116,
+      "y": 569
+    }
+  },
+  {
+    "title": "CatSpawnFail",
+    "body": [
+      "<<setGlobal spawnStrayCat False>>",
+      "<<requestGoToQuestIfAvailable>>",
+      "<<pickRandomFromDialoguePools>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": -1118,
+      "y": 817
+    }
+  }
+]

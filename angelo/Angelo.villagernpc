@@ -1,0 +1,86 @@
+{
+  "code": "mods.mb.AngelosPizzeria.character.Angelo",
+  "name": "Angelo",
+  "personality": "mods.mb.AngelosPizzeria.Personality.Angelo",
+  "job": "mods.mb.AngelosPizzeria.job.Angelo",
+  "initialDesign": "staxel.village.design.VillagerMale",
+  "initialOutfit": "mods.mb.AngelosPizzeria.outfit.Angelo",
+  "homeTotem": "mods.mb.AngelosPizzeria.totem.AngeloHome",
+  "ignoreTavern": false,
+  "ignoreTotemClaimed": false,
+  "polaroid": "mods/AngelosPizzeria/angelo/quest/AngeloPolaroid.png",
+  "giftDialogue": "mods.mb.AngelosPizzeria.dialogue.GiveItem",
+  "restrictedSpawn": {
+    "afterDay": 0,
+    //"mail": "mods.mb.AngelosPizzeria.mail.AngeloArrival",
+    "spawnInForest": false,
+    "requiredTotems": [
+		"staxel.totem.workplace.Museum",
+		"staxel.totem.Arcade",
+		"staxel.totem.workplace.Patisserie",
+		"staxel.totem.workplace.PetStore"
+    ],
+    "villagers": [
+      {
+        "villager": "staxel.village.character.Vorlen",
+        "reputationLevel": "staxel.reputationLevel.Liked"
+      },
+      {
+        "villager": "staxel.village.character.Rosemary",
+        "reputationLevel": "staxel.reputationLevel.Liked"
+      },
+      {
+        "villager": "staxel.village.character.Jamie",
+        "reputationLevel": "staxel.reputationLevel.Friends"
+      },
+      {
+        "villager": "staxel.village.character.Emilia",
+        "reputationLevel": "staxel.reputationLevel.Liked"
+      }
+    ]
+  },
+  
+  "hideFromMap": false,
+  "introductionDialogue": "mods.mb.AngelosPizzeria.dialogue.intro.Angelo",
+  "gainsRepThroughDialogue": true,
+  "questVillager": false,
+  "acceptGift": true,
+  "overrideGiftCap": false,
+  "uniqueDialogue": {
+    "staxel.reputationLevel.Acquaintance": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloAcquaintance"],
+    "staxel.reputationLevel.Liked": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloLiked"],
+    "staxel.reputationLevel.Friends": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloFriend"],
+    "staxel.reputationLevel.BestFriends": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloBestFriend"]
+  },
+  "roomieDialogue": ["mods.mb.AngelosPizzeria.dialoguePool.AngeloRoomie"],
+  "requiredReputationQuests": {
+	"staxel.reputationLevel.Liked": ["mods.mb.AngelosPizzeria.mainQuest.Angelo.Acquaintance"],
+    "staxel.reputationLevel.Friends": ["mods.mb.AngelosPizzeria.mainQuest.Angelo.Liked"],
+    "staxel.reputationLevel.BestFriends": ["mods.mb.AngelosPizzeria.mainQuest.Angelo.Friend"]
+  },
+  "regards": [
+    {
+      "kind": "staxel.concepts.Category",
+      "attitude": 3.5,
+      "concept": {
+        "categories":["pizza", "pasta", "coffee"]
+      }
+    },
+    {
+      "kind": "staxel.concepts.Food",
+      "attitude": 3,
+      "concept": {
+        "food": {
+          "code": "staxel.item.crafting.CakeCarrot"
+        }
+      }
+    },
+    {
+      "kind": "staxel.concepts.Category",
+      "attitude": -1,
+      "concept": {
+        "categories":["fish"]
+      }
+    },
+  ],
+}

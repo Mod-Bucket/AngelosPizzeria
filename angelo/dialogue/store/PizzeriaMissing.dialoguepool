@@ -1,0 +1,7 @@
+{
+  "code": "mods.mb.AngelosPizzeria.dialoguePool.PizzeriaMissing",
+  "type": "WorkPlaceMissing",
+  "dialogue": [
+    "mods.mb.AngelosPizzeria.dialogue.job.PizzeriaMissing"
+  ]
+}

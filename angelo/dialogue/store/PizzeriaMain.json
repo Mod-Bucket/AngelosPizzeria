@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Start",
+    "body": [
+      "<<lockPlayerInConversation>>",
+      "<<typewriterMode on>>",
+      "<<if $rewarded_for_pizzeria is 0>>",
+      "<<branchValidStructureExists mods.mb.AngelosPizzeria.totem.Pizzeria PizzeriaBuilt>>",
+      "<<endif>>",
+      "[[GoToPrimary]]"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 563,
+      "y": 377
+    }
+  },
+  {
+    "title": "GoToPrimary",
+    "body": [
+      "<<transitionToPrimary>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 893,
+      "y": 378
+    }
+  },
+  {
+    "title": "PizzeriaBuilt",
+    "body": [
+      "<<writeDialogue on staxel.mainQuest.Pizzeria>>",
+      "Oh...oh my... #line:10000100",
+      "What a wonderful ^c:1486b0;patisserie^c:pop; you've built me! #line:10000200",
+      "I'm not sure how I could ever repay you! #line:10000300",
+      "If you come by tomorrow, I'll start preparing all kinds of sweets and pastries! #line:10000400",
+      "I'm sure you'll find something you like! #line:10000500",
+      "<<set $rewarded_for_patisserie to 1>>",
+      "<<writeDialogue off>>",
+      "<<completeMainQuest mods.mb.AngelosPizzeria.mainQuest.Angelo.Acquaintance_Pizzeria>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 185,
+      "y": 382
+    }
+  }
+]

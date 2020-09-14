@@ -1,0 +1,114 @@
+  {
+    "title": "CheckHouseProgress",
+    "body": [
+      "<<branchValidStructureExists mods.AngelosPizzeria.totem.AngeloHome House_Built>>",
+      "[[CheckForMailbox]]"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1228,
+      "y": 1151
+    }
+  },
+  
+  {
+    "title": "CheckForMailbox",
+    "body": [
+      "<<loadIfPlayerLearntRecipe staxel.crafting.recipes.Cauldron $learnt>>",
+      "<<if not $learnt>>",
+      "    <<giveItemToPlayerIfDoesntHave recipe staxel.crafting.recipes.Cauldron>>",
+      "<<endif>>",
+      "",
+      "<<loadTotemPlaced mods.AngelosPizzeria.totem.AngeloHome $totemExists>>",
+      "<<if $totemExists is 0>>",
+      "<<branchPlayerHasItem tilePlacer mods.AngelosPizzeria.totems.AngeloMailbox House_NotBuilt>>",
+      "You appear to have misplaced my ^c:d03e37;Mailbox^c:pop;. #line:10010200",
+      "<<giveItemToPlayerIfDoesntHave tilePlacer tilePlacer mods.AngelosPizzeria.totems.AngeloMailbox>>",
+      "Make sure you don't lose this one as well.  #line:10010300",
+	  "^c:1486b0;Maximilian's^c:pop; mailbox replacement fees are borderline extortion. #line:10010400
+      "<<endif>>",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1227,
+      "y": 938
+    }
+  },
+  
+  
+  
+  
+
+  
+  {
+    "title": "House_NotBuilt",
+    "body": [
+      "<<pickRandomPath>>",
+      "<<TavernBed>>",
+      "<<Suitcase>>",
+      "<<SpareTime>>",
+      "<<flushRandomPath>>"    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1232,
+      "y": 829
+    }
+  },
+  
+  
+  {
+    "title": "Suitcase",
+    "body": [
+      "Ooooh... ^c:1486b0;$name;'s^c:pop; Still not done with the house constructions? #line:10010000",
+      "That's a shame. I was hoping I'd be be able to stop living out of my suitcase." #line:10010000
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1232,
+      "y": 729
+    }
+  },
+  
+  {
+    "title": "TavernBed",
+    "body": [
+      "I woke up last night with a sudden itch over my entire body. #line:10011000",
+      "It took all my will power to resist the urge to scratch and go back to sleep. #line:10012000",
+      "You don't think there are bed bugs here, do you? #line:10013000",
+      "Hopefully you finish my home soon so I can sleep in my own bed. #line:10014000",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1232,
+      "y": 629
+    }
+  },
+  
+  {
+    "title": "TavernBed",
+    "body": [
+      "Hey there.... What a lovely surprise visit. #line:10011000",
+      "If you have spare time to visit me does that mean my house is done? #line:10012000",
+      "It's not done yet? #line:10013000",
+      "That's fine. I'll just continue living in the tavern while you leisurely build my home. #line:10014000",
+      "<<typewriterMode off True True>>",
+      "<<releasePlayerFromConversation>>"
+    ],
+    "tags": "",
+    "colorID": 0,
+    "position": {
+      "x": 1232,
+      "y": 529
+    }
+  },
